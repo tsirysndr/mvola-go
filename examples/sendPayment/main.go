@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 	"time"
 
 	uuid "github.com/google/uuid"
 	mvola "github.com/tsirysndr/mvola-go"
 )
+
+const ISO8601 = "2006-01-02T15:04:05.999Z"
 
 func main() {
 	var (
@@ -21,7 +22,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(res)
 
 	mvola.SetAccessToken(client, res.AccessToken)
 
@@ -40,19 +40,14 @@ func main() {
 	}
 	mvola.SetOptions(client, opt)
 
-	requestDate := strings.Split(time.Now().UTC().Format(time.RFC3339Nano), "+")[0]
-	requestDate = requestDate[:len(requestDate)-7]
-
-	if len(requestDate) == 22 {
-		requestDate += "0"
-	}
+	requestDate := time.Now().UTC().Format(ISO8601)
 
 	tx := mvola.TransactionRequest{
 		Amount:          "100000",
 		Currency:        "Ar",
 		DescriptionText: "test",
 		RequestingOrganisationTransactionReference: transactionRef,
-		RequestDate:                  requestDate + "Z",
+		RequestDate:                  requestDate,
 		OriginalTransactionReference: transactionRef,
 		DebitParty: []mvola.KeyValue{{
 			Key:   "msisdn",
