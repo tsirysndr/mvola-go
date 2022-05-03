@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	uuid "github.com/google/uuid"
@@ -33,32 +34,37 @@ func main() {
 		Version:               "1.0",
 		CorrelationID:         correlationID,
 		UserLanguage:          "FR",
-		UserAccountIdentifier: "msisdn;0340017983",
-		PartnerName:           "mvola",
+		UserAccountIdentifier: "msisdn;0343500003",
+		PartnerName:           "TestMVola",
 		CallbackURL:           nil,
 	}
 	mvola.SetOptions(client, opt)
 
-	fmt.Println(time.Now().Format(time.RFC3339))
+	requestDate := strings.Split(time.Now().UTC().Format(time.RFC3339Nano), "+")[0]
+	requestDate = requestDate[:len(requestDate)-7]
+
+	if len(requestDate) == 22 {
+		requestDate += "0"
+	}
 
 	tx := mvola.TransactionRequest{
 		Amount:          "100000",
 		Currency:        "Ar",
 		DescriptionText: "test",
-		RequestingOrganisationTransactionReference: "xxx",
-		RequestDate:                  time.Now().Format(time.RFC3339),
+		RequestingOrganisationTransactionReference: transactionRef,
+		RequestDate:                  requestDate + "Z",
 		OriginalTransactionReference: transactionRef,
 		DebitParty: []mvola.KeyValue{{
 			Key:   "msisdn",
-			Value: "0344289931",
+			Value: "0343500003",
 		}},
 		CreditParty: []mvola.KeyValue{{
 			Key:   "msisdn",
-			Value: "0340017983",
+			Value: "0343500004",
 		}},
 		Metadata: []mvola.KeyValue{{
 			Key:   "partnerName",
-			Value: "partner test",
+			Value: "TestMVola",
 		},
 			{
 				Key:   "fc",

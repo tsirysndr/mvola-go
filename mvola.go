@@ -33,11 +33,9 @@ func SetAccessToken(c *Client, accessToken string) {
 func SetOptions(c *Client, opt Options) {
 	c.base.Set("Version", opt.Version)
 	c.base.Set("X-CorrelationID", opt.CorrelationID)
-	/*
-		c.base.Set("UserLanguage", opt.UserLanguage)
-		c.base.Set("UserAccountIdentifier", opt.UserAccountIdentifier)
-		c.base.Set("PartnerName", opt.PartnerName)
-	*/
+	c.base.Set("UserLanguage", opt.UserLanguage)
+	c.base.Set("UserAccountIdentifier", opt.UserAccountIdentifier)
+	c.base.Set("PartnerName", opt.PartnerName)
 	if opt.CallbackURL != nil {
 		c.base.Set("X-Callback-URL", *opt.CallbackURL)
 	}
