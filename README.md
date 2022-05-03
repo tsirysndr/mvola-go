@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-  go get -u github.com/mvola/mvola-go
+  go get -u github.com/tsirysndr/mvola-go
 ```
 
 ## Usage
