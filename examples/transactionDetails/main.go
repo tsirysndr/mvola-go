@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/google/uuid"
 	mvola "github.com/tsirysndr/mvola-go"
 )
 
@@ -18,9 +19,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(res)
 
 	mvola.SetAccessToken(client, res.AccessToken)
 
-	client.Transaction.GetTransactionDetails("")
+	correlationID := uuid.NewString()
+	opt := mvola.Options{
+		Version:               "1.0",
+		CorrelationID:         correlationID,
+		UserAccountIdentifier: "msisdn;0343500003",
+	}
+	mvola.SetOptions(client, opt)
+
+	txdetails, err := client.Transaction.GetTransactionDetails("636042511")
+	fmt.Println(txdetails)
+	fmt.Println(err)
 }

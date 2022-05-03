@@ -23,13 +23,16 @@ type TransactionDetails struct {
 	Currency             string     `json:"currency"`
 	TransactionReference string     `json:"transactionReference"`
 	TransactionStatus    string     `json:"transactionStatus"`
-	CreateDate           string     `json:"createDate"`
+	CreationDate         string     `json:"creationDate"`
+	RequestDate          string     `json:"requestDate"`
 	DebitParty           []KeyValue `json:"debitParty"`
 	CreditParty          []KeyValue `json:"creditParty"`
 	Metadata             []KeyValue `json:"metadata"`
-	Fee                  struct {
-		FeeAmount string `json:"feeAmount"`
-	} `json:"fee"`
+	Fees                 []Fee      `json:"fees"`
+}
+
+type Fee struct {
+	FeeAmount string `json:"feeAmount"`
 }
 
 type TransactionStatus struct {

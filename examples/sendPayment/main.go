@@ -43,7 +43,7 @@ func main() {
 	requestDate := time.Now().UTC().Format(ISO8601)
 
 	tx := mvola.TransactionRequest{
-		Amount:          "100000",
+		Amount:          "1000",
 		Currency:        "Ar",
 		DescriptionText: "test",
 		RequestingOrganisationTransactionReference: transactionRef,
