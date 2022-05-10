@@ -10,7 +10,7 @@
 		<a href="https://pkg.go.dev/github.com/tsirysndr/mvola-go" target="_blank">
 			<img alt="Go Reference" src="https://pkg.go.dev/badge/github.com/tsirysndr/mvola-go" />
 		</a>
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
 </p>
 
