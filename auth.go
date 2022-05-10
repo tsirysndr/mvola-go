@@ -22,7 +22,6 @@ func (s *AuthService) GenerateToken(consumerKey, consumerSecret string) (*Auth, 
 	}
 	res := new(Auth)
 	s.client.base.SetBasicAuth(consumerKey, consumerSecret)
-	resp, _ := s.client.base.Post("/token").BodyForm(params).Receive(res, err)
-	defer resp.Body.Close()
+	s.client.base.Post("/token").BodyForm(params).Receive(res, err)
 	return res, err
 }
