@@ -1,13 +1,16 @@
 <h1>mvola-go</h1>
 <p>
+	<a href="https://app.travis-ci.com/github/tsirysndr/mvola-go" target="_blank">
+    <img src="https://app.travis-ci.com/tsirysndr/mvola-go.svg?branch=master" />
+  </a>
+  <a href="https://codecov.io/gh/tsirysndr/mvola-go" target="_blank">
+    <img src="https://codecov.io/gh/tsirysndr/mvola-go/branch/master/graph/badge.svg?token=" />
+  </a>
   <a href="#" target="_blank">
 		<a href="https://pkg.go.dev/github.com/tsirysndr/mvola-go" target="_blank">
 			<img alt="Go Reference" src="https://pkg.go.dev/badge/github.com/tsirysndr/mvola-go" />
 		</a>
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
-  </a>
-  <a href="https://twitter.com/tsiry_sndr" target="_blank">
-    <img alt="Twitter: tsiry_sndr" src="https://img.shields.io/twitter/follow/tsiry_sndr.svg?style=social" />
   </a>
 </p>
 
