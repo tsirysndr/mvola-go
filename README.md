@@ -6,10 +6,10 @@
   <a href="https://codecov.io/gh/tsirysndr/mvola-go" target="_blank">
     <img src="https://codecov.io/gh/tsirysndr/mvola-go/branch/master/graph/badge.svg?token=" />
   </a>
-  <a href="#" target="_blank">
-		<a href="https://pkg.go.dev/github.com/tsirysndr/mvola-go" target="_blank">
+	<a href="https://pkg.go.dev/github.com/tsirysndr/mvola-go" target="_blank">
 			<img alt="Go Reference" src="https://pkg.go.dev/badge/github.com/tsirysndr/mvola-go" />
 		</a>
+  <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
 </p>
