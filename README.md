@@ -59,7 +59,7 @@ func main() {
 		Version:               "1.0",
 		CorrelationID:         correlationID,
 		UserLanguage:          "FR",
-		UserAccountIdentifier: "msisdn;0343500003",
+		UserAccountIdentifier: "msisdn;0343500004",
 		PartnerName:           "TestMVola",
 		CallbackURL:           nil,
 	}
