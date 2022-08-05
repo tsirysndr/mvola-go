@@ -12,6 +12,9 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg" />
   </a>
+  <a href="https://github.com/tsirysndr/mvola-go/commits/master">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tsirysndr/mvola-go">
+  </a>
 </p>
 
 [MVola](https://www.mvola.mg/devportal) Go client library.
